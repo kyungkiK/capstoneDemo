@@ -196,8 +196,8 @@
       <h2>로그인</h2>
       <form method="post" action="/login/success" class="wrapper-box" role="form" ng-submit="login()">
         <input type="text"
-               ng-model="email"
-               class="form-control form-control-email"
+               ng-model="username"
+               class="form-control form-control-username"
                placeholder="이름 입력"
                name="username"
                required>

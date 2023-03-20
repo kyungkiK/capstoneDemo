@@ -25,5 +25,11 @@ public class MemberController {
         return "member/joinok";
     }
 
+    @GetMapping("/member/mypage")
+    public String mypageView() {
+
+        return "/mypage";
+    }
+
 
 }
