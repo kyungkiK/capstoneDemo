@@ -1,10 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>로그인</title>
+  <title>로그인</title>
 
   <style>
-
     .login-page {
       position: absolute;
       width: 100%;
@@ -182,7 +181,6 @@
       opacity: 0;
       transform: translateY(10px);
     }
-
   </style>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -196,8 +194,8 @@
       <h2>로그인</h2>
       <form method="post" action="/login/success" class="wrapper-box" role="form" ng-submit="login()">
         <input type="text"
-               ng-model="username"
-               class="form-control form-control-username"
+               ng-model="email"
+               class="form-control form-control-email"
                placeholder="이름 입력"
                name="username"
                required>
@@ -207,7 +205,9 @@
                placeholder="비밀번호 입력"
                name="password"
                required >
-        <a class="outer-link pull-left" href="#/forgot">아이디 찾기</a>
+        <a class="outer-link pull-left" href="#">아이디 찾기</a>
+        <span class="outer-link pull-left">&nbsp;|&nbsp;</span>
+        <a class="outer-link pull-left" href="#">비밀번호 재설정</a>
         <button type="submit" class="btn btn-submit btn-default pull-right">로그인</button>
       </form>
     </div>
@@ -257,4 +257,3 @@
 </div>
 </body>
 </html>
-
