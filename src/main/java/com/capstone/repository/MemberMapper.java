@@ -1,6 +1,6 @@
-package com.nomalboard.repository;
+package com.capstone.repository;
 
-import com.nomalboard.dto.MemberTO;
+import com.capstone.dto.MemberTO;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface MemberMapper {
 
-    @Insert("insert into member values (0,#{username},#{email},#{password},#{role})")
+    @Insert("insert into member values (0,#{username},#{email},#{password},#{role},#{nickname})")
     int save(MemberTO to);
 
     @Select("select id, username, email, role, password from member where username = #{username}")
@@ -23,7 +23,7 @@ public interface MemberMapper {
     @Select("select username from member where email = #{email}")
     String findId(String email);
 
-    @Select("select id, username, email, role from member where username = #{username} and email = #{email}")
+    @Select("select id, username, email, role, nickname from member where username = #{username} and email = #{email}")
     MemberTO checkMember(String username, String email);
 
     @Update("update member set password = #{password} where username = #{username} and email = #{email}")

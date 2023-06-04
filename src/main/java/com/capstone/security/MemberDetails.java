@@ -1,6 +1,6 @@
-package com.nomalboard.security;
+package com.capstone.security;
 
-import com.nomalboard.dto.MemberTO;
+import com.capstone.dto.MemberTO;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;

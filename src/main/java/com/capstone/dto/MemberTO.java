@@ -1,4 +1,4 @@
-package com.nomalboard.dto;
+package com.capstone.dto;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -11,4 +11,6 @@ public class MemberTO {
     private String email;
     private String password;
     private String role;
+    private String nickname;
+
 }

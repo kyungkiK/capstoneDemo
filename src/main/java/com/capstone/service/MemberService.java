@@ -1,7 +1,7 @@
-package com.nomalboard.service;
+package com.capstone.service;
 
-import com.nomalboard.dto.MemberTO;
-import com.nomalboard.repository.MemberMapper;
+import com.capstone.dto.MemberTO;
+import com.capstone.repository.MemberMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

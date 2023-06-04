@@ -1,4 +1,4 @@
-package com.nomalboard;
+package com.capstone;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,10 +7,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @SpringBootApplication
-public class NomalboardApplication {
+public class capstoneApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(NomalboardApplication.class, args);
+        SpringApplication.run(capstoneApplication.class, args);
     }
 
     @Bean

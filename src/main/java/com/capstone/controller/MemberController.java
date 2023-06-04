@@ -1,7 +1,7 @@
-package com.nomalboard.controller;
+package com.capstone.controller;
 
-import com.nomalboard.dto.MemberTO;
-import com.nomalboard.service.MemberService;
+import com.capstone.dto.MemberTO;
+import com.capstone.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,9 +26,9 @@ public class MemberController {
         return "member/joinok";
     }
 
-    @GetMapping("/member/mypage")
+    @GetMapping("/mypg")
     public String mypageView() {
-        return "/mypage";
+        return "/mypg";
     }
 
     @GetMapping("/findid")
@@ -60,4 +60,38 @@ public class MemberController {
 
         return "/member/updatepasswordok";
     }
+
+
+    @GetMapping("/qna")
+    public String qnaView () {
+        return "/qna";
+    }
+
+    @GetMapping("/cart")
+    public String cartView () {
+        return "cart";
+    }
+
+    @GetMapping("/freeboard")
+    public String freeboardView () {
+        return "/freeboard";
+    }
+
+    @GetMapping("/rental")
+    public String rentalView () {
+        return "/rental";
+    }
+
+    @GetMapping("/search")
+    public String searchView () {
+        return "/search";
+    }
+
+    @GetMapping("/trade")
+    public String tradeView () {
+        return "/trade";
+    }
+
+
+
 }

@@ -45,7 +45,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#">Board</a></li>
                 <sec:authorize access="isAuthenticated()">
-                <li><a href="/member/mypage"><b>${principal.to.username}</b> </a></li>
+                <li><a href="/member/mypg"><b>${principal.to.username}</b> </a></li>
                 <li><a href="/logout"> <b>Log-out</b></a> </li>
                 </sec:authorize>
                 <sec:authorize access="isAnonymous()">

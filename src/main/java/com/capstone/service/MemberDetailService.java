@@ -1,8 +1,8 @@
-package com.nomalboard.service;
+package com.capstone.service;
 
-import com.nomalboard.dto.MemberTO;
-import com.nomalboard.repository.MemberMapper;
-import com.nomalboard.security.MemberDetails;
+import com.capstone.dto.MemberTO;
+import com.capstone.repository.MemberMapper;
+import com.capstone.security.MemberDetails;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
