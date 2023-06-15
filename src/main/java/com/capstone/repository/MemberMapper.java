@@ -14,6 +14,9 @@ public interface MemberMapper {
     @Insert("insert into member values (0,#{username},#{email},#{password},#{role},#{nickname})")
     int save(MemberTO to);
 
+    @Select("select id, username, email, nickname, role from member where username = #{username}")
+    MemberTO showMember(String username);
+
     @Select("select id, username, email, role, password from member where username = #{username}")
     MemberTO findByUsername(String username);
 

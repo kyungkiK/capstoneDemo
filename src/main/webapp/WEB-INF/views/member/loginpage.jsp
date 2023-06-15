@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+
 <html>
 <head>
   <title>로그인</title>
@@ -226,6 +228,19 @@
   </script>
 </head>
 <body>
+<sec:authorize access="isAuthenticated()">
+  <sec:authentication property="principal" var="principal"/>
+</sec:authorize>
+
+<sec:authorize access="isAuthenticated()">
+  <!--
+  <meta http-equiv="refresh" content="0; url=/">
+  -->
+  <script>
+    setTimeout(function(){ window.location.replace('/')}, 0);
+  </script>
+</sec:authorize>
+
 <div class="login-page" ng-app="">
   <div class="login-content login-content-signin" ng-hide="showSignIn">
     <div>

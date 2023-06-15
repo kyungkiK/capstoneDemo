@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.security.Principal;
+
 @Controller
 @RequiredArgsConstructor
 public class MemberController {
@@ -27,9 +29,14 @@ public class MemberController {
     }
 
     @GetMapping("/mypg")
-    public String mypageView() {
-        return "/mypg";
+    public String mypageView(Principal principal, Model model) {
+        String loginId = principal.getName();
+        MemberTO to = memberService.getMemberByEmail(loginId);
+        model.addAttribute("to", to);
+
+        return "mypage";
     }
+
 
     @GetMapping("/findid")
     public String findId() {
@@ -44,11 +51,6 @@ public class MemberController {
         model.addAttribute("username", username);
 
         return "/member/findidok";
-    }
-
-    @GetMapping("/updatepassword")
-    public String updatePassword() {
-        return "/member/updatepasswordpage";
     }
 
     @PostMapping("/updatepassword")

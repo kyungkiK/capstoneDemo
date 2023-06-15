@@ -73,4 +73,12 @@ public class MemberService {
 
         return flag;
     }
+
+
+    public MemberTO getMemberByEmail(String username) {
+
+        MemberTO to = memberMapper.showMember(username);
+
+        return to;
+    }
 }
