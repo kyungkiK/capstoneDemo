@@ -14,6 +14,10 @@ public class MemberService {
 
     private final PasswordEncoder passwordEncoder;
 
+    public MemberTO selectMyInfo(int id) {
+        return memberMapper.selectOneById(id);
+    }
+
     public int memberJoin(MemberTO to) {
 
         to.setRole("ROLE_USER");
@@ -80,5 +84,18 @@ public class MemberService {
         MemberTO to = memberMapper.showMember(username);
 
         return to;
+    }
+
+    public int deleteMember(MemberTO to){
+        int result = memberMapper.deleteMember(to);
+        int flag = 1;
+
+        if (result == 1) {
+            flag = 0;
+        } else {
+            flag = 1;
+        }
+
+        return flag;
     }
 }

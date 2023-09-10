@@ -90,8 +90,20 @@
         </div>
     </div>
 </header>
-<%
-    /*
+
+<section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-black">
+            <h2 class="display-4 fw-bolder">공지사항</h2><p></p>
+            <p class="lead fw-normal text-black-50 mb-0">거래 규칙1</p><p></p>
+            <p class="lead fw-normal text-black-50 mb-0">거래 규칙2</p><p></p>
+            <p class="lead fw-normal text-black-50 mb-0">거래 규칙3</p><p></p>
+            <p class="lead fw-normal text-black-50 mb-0">거래 규칙4</p><p></p>
+        </div>
+    </div>
+</section>
+
+
 <!-- Section-->
 <section class="py-5">
     <div class="container px-4 px-lg-5 mt-5">
@@ -295,8 +307,7 @@
         </div>
     </div>
 </section>
-*/
-%>
+
 <!-- Footer-->
 <footer class="py-5 bg-dark">
     <div class="container"><p class="m-0 text-center text-white">Copyright © Your Website 2023</p></div>

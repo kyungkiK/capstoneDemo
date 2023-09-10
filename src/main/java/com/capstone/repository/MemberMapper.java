@@ -1,10 +1,7 @@
 package com.capstone.repository;
 
 import com.capstone.dto.MemberTO;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
 @Mapper
@@ -13,6 +10,9 @@ public interface MemberMapper {
 
     @Insert("insert into member values (0,#{username},#{email},#{password},#{role},#{nickname})")
     int save(MemberTO to);
+
+    @Select("select id, name, email from member where id = #{id}")
+    MemberTO selectOneById(int id);
 
     @Select("select id, username, email, nickname, role from member where username = #{username}")
     MemberTO showMember(String username);
@@ -31,4 +31,7 @@ public interface MemberMapper {
 
     @Update("update member set password = #{password} where username = #{username} and email = #{email}")
     int updatePassword(String username, String email, String password);
+
+    @Delete("delete from member where id = #{id} and password = #{password}")
+    int deleteMember(MemberTO to);
 }

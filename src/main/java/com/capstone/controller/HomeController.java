@@ -8,6 +8,7 @@ public class HomeController {
 
     @GetMapping("/")
     public String viewIndex() {
-        return "main";
+        return "page/main";
     }
+
 }

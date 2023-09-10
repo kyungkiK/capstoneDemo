@@ -101,14 +101,15 @@
             <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" style="max-width:100%; height:auto;">
         </div>
             <div class="memberInfo">
-            <p class="lead fw-normal mb-0">이름 : ${to.username}</p>
-            <p class="lead fw-normal mb-0">이메일 : ${to.email}</p>
-            <p class="lead fw-normal mb-0">닉네임 : ${to.nickname}</p>
-            <p class="lead fw-normal mb-0">권한 : ${to.role}</p>
-            <p> </p>
+                <p class="lead fw-normal mb-0" hidden="hidden"> ${to.id} </p>
+                <p class="lead fw-normal mb-0">이름 : ${to.username}</p>
+                <p class="lead fw-normal mb-0">이메일 : ${to.email}</p>
+                <p class="lead fw-normal mb-0">닉네임 : ${to.nickname}</p>
+                <p class="lead fw-normal mb-0">권한 : ${to.role}</p>
             <div class="button">
+                <a class="btn btn-outline-dark mt-auto" href="/emailAuth">이메일 인증</a>
                 <a class="btn btn-outline-dark mt-auto" href="#">정보 수정</a>
-                <a class="btn btn-outline-dark mt-auto" href="#">회원 탈퇴</a>
+                <a class="btn btn-outline-dark mt-auto" href="/delete">회원 탈퇴</a>
             </div>
         </div>
     </div>

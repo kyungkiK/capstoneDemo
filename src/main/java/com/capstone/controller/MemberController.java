@@ -34,7 +34,7 @@ public class MemberController {
         MemberTO to = memberService.getMemberByEmail(loginId);
         model.addAttribute("to", to);
 
-        return "mypage";
+        return "member/mypage";
     }
 
 
@@ -63,35 +63,54 @@ public class MemberController {
         return "/member/updatepasswordok";
     }
 
+    @GetMapping("/delete")
+    public String memberDelete(@RequestParam("id") int id, Model model){
+        model.addAttribute("to", memberService.selectMyInfo(id));
+        return "/member/delete";
+    }
+
+    @PostMapping("/delete")
+    public String memberDelete(MemberTO to, Model model){
+        model.addAttribute("id", to.getId());
+        model.addAttribute("flag", memberService.deleteMember(to));
+        return "/member/deleteAction";
+    }
+
+    @GetMapping("/emailAuth")
+    public String emailAuth(@RequestParam("id") int id, Model model){
+        model.addAttribute("to", memberService.selectMyInfo(id));
+        return "/member/emailAuth";
+    }
+
 
     @GetMapping("/qna")
     public String qnaView () {
-        return "/qna";
+        return "page/qna";
     }
 
     @GetMapping("/cart")
     public String cartView () {
-        return "cart";
+        return "page/cart";
     }
 
     @GetMapping("/freeboard")
     public String freeboardView () {
-        return "/freeboard";
+        return "page/freeboard";
     }
 
     @GetMapping("/rental")
     public String rentalView () {
-        return "/rental";
+        return "page/rental";
     }
 
     @GetMapping("/search")
     public String searchView () {
-        return "/search";
+        return "page/search";
     }
 
     @GetMapping("/trade")
     public String tradeView () {
-        return "/trade";
+        return "page/trade";
     }
 
 
