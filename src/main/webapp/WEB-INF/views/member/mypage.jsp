@@ -1,4 +1,4 @@
-<%@ page import="com.capstone.dto.MemberTO" %>
+<%@ page import="com.testCode.dto.MemberTO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -104,7 +104,7 @@
                 <p class="lead fw-normal mb-0" hidden="hidden"> ${to.id} </p>
                 <p class="lead fw-normal mb-0">이름 : ${to.username}</p>
                 <p class="lead fw-normal mb-0">이메일 : ${to.email}</p>
-                <p class="lead fw-normal mb-0">닉네임 : ${to.nickname}</p>
+                <p class="lead fw-normal mb-0">닉네임 : ${to.phone_number}</p>
                 <p class="lead fw-normal mb-0">권한 : ${to.role}</p>
             <div class="button">
                 <a class="btn btn-outline-dark mt-auto" href="/emailAuth">이메일 인증</a>

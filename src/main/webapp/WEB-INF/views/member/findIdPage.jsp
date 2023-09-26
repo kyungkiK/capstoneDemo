@@ -268,32 +268,32 @@
             </ul>
 
             <form action="/updatepassword" method="post" class="wrapper-box">
-                <div class="input__block">
-                    <input type="username"
-                           ng-model="username"
-                           class="form-control form-control-username"
-                           placeholder="이름 입력"
-                           name="username"
-                           required>
-                </div>
-                <div class="input__block">
-                    <input type="email"
-                           ng-model="email"
-                           class="form-control form-control-email"
-                           placeholder="이메일 입력"
-                           name="email"
-                           required >
-                </div>
-                <div class="input__block">
-                    <input type="password"
-                           ng-model="password"
-                           class="form-control form-control-password"
-                           placeholder="재설정할 비밀번호 입력"
-                           name="password"
-                           required >
-                </div>
-                <button type="submit" class="btn btn-submit btn-default pull-right">비밀번호 재설정</button>
-            </form>
+            <div class="input__block">
+                <input type="username"
+                       ng-model="username"
+                       class="form-control form-control-username"
+                       placeholder="이름 입력"
+                       name="username"
+                       required>
+            </div>
+            <div class="input__block">
+                <input type="email"
+                       ng-model="email"
+                       class="form-control form-control-email"
+                       placeholder="이메일 입력"
+                       name="email"
+                       required >
+            </div>
+            <div class="input__block">
+                <input type="password"
+                       ng-model="password"
+                       class="form-control form-control-password"
+                       placeholder="재설정할 비밀번호 입력"
+                       name="password"
+                       required >
+            </div>
+            <button type="submit" class="btn btn-submit btn-default pull-right">비밀번호 재설정</button>
+        </form>
         </div>
     </div>
 

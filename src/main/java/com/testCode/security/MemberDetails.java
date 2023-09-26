@@ -1,6 +1,6 @@
-package com.capstone.security;
+package com.testCode.security;
 
-import com.capstone.dto.MemberTO;
+import com.testCode.dto.MemberTO;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;

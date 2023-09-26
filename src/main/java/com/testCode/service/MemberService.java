@@ -1,10 +1,14 @@
-package com.capstone.service;
+package com.testCode.service;
 
-import com.capstone.dto.MemberTO;
-import com.capstone.repository.MemberMapper;
+import com.testCode.dto.MemberTO;
+import com.testCode.repository.MemberMapper;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 @Service
 @RequiredArgsConstructor
@@ -14,24 +18,34 @@ public class MemberService {
 
     private final PasswordEncoder passwordEncoder;
 
-    public MemberTO selectMyInfo(int id) {
-        return memberMapper.selectOneById(id);
-    }
-
-    public int memberJoin(MemberTO to) {
+    public int memberJoin(MemberTO to, String email) {
 
         to.setRole("ROLE_USER");
         to.setPassword(passwordEncoder.encode(to.getPassword()));
 
+        int count = memberMapper.selectByEmail(email);
         int result = memberMapper.save(to);
         int flag = 1;
 
-        if (result == 1) {
-            flag = 0;
-        } else {
+        if(count > 0){
             flag = 1;
+        } else {
+            if (result == 1) {
+                flag = 0;
+            } else {
+                flag = 1;
+            }
+        } return flag;
+    }
+
+    public String checkLoginStatus(HttpServletRequest request){
+        HttpSession session = request.getSession(true);
+
+        if(session != null && session.getAttribute("login") != null) {
+            return "true";
+        } else {
+            return "false";
         }
-        return flag;
     }
 
     public String findId(String email, String password) {
@@ -53,13 +67,13 @@ public class MemberService {
 
         int flag = 1;
 
-        if(memberMapper.checkMember(to.getUsername(), to.getEmail()) != null) {
+        if (memberMapper.checkMember(to.getUsername(), to.getEmail()) != null) {
 
             String encodedPassword = passwordEncoder.encode(to.getPassword());
 
             int result = memberMapper.updatePassword(to.getUsername(), to.getEmail(), encodedPassword);
 
-            if(result == 1) {
+            if (result == 1) {
 
                 flag = 0;
 
@@ -84,18 +98,5 @@ public class MemberService {
         MemberTO to = memberMapper.showMember(username);
 
         return to;
-    }
-
-    public int deleteMember(MemberTO to){
-        int result = memberMapper.deleteMember(to);
-        int flag = 1;
-
-        if (result == 1) {
-            flag = 0;
-        } else {
-            flag = 1;
-        }
-
-        return flag;
     }
 }

@@ -1,4 +1,4 @@
-package com.capstone.config;
+package com.testCode.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -11,9 +11,8 @@ public class SecurityConfig {
 
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer() {
-        return (web) -> web.ignoring().antMatchers("/css/**","/fonts/**","/img/**","/js/**");
+        return (web) -> web.ignoring().antMatchers("/css/**", "/fonts/**", "/img/**", "/js/**");
     }
-
     @Bean
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
@@ -36,6 +35,8 @@ public class SecurityConfig {
                         .antMatchers("/member/**").authenticated()
                         .anyRequest().permitAll()
         );
+
+
 
         http.logout()
                 .logoutUrl("/logout")

@@ -59,6 +59,7 @@
                     </ul>
                 </li>
                 <li class="nav-item"><a class="nav-link" href="/freeboard">자유 게시판</a></li>
+                <li class="nav-item"><a class="nav-link" href="/check">로그인확인</a></li>
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -68,6 +69,7 @@
                 </sec:authorize>
                 <sec:authorize access="isAnonymous()">
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="/login">Log-in</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="/join">Join</a></li>
                 </sec:authorize>
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 <form class="d-flex" action="/cart">
